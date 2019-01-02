@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<script src="jquery.js"></script>
+<script>
+
+window.onload = function myFunction() {
+  var w = window.innerWidth * 0.85;
+  var h = window.innerHeight * 0.85;
+	document.getElementById("analysis").style.width = w + "px";
+	document.getElementById("analysis").style.height = h + "px";
+    document.getElementById("deps").style.width = w + "px";
+	document.getElementById("deps").style.height = h + "px";
+    document.getElementById("summary").style.width = w + "px";
+	document.getElementById("summary").style.height = h + "px";
+
+}
+
+
+function error(_this, status){
+  console.log(_this, status)
+  // do your work in error
+  _this.parentNode.removeChild(_this);
+  }
+
+
+  function autosizemyfriend(_this){
+    console.log(_this, id)
+    var w = window.innerWidth;
+    var h = window.innerHeight;
+    // do your work in error
+    //_this.style.width = w + "px";
+    }
+
+</script>
+
+
+
+
+
+	</head>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+.collapsible {
+  background-color: #777;
+  color: white;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 15px;
+}
+
+.active, .collapsible:hover {
+  background-color: #555;
+}
+
+.content {
+  padding: 0 18px;
+  display: none;
+  overflow: hidden;
+  background-color: #f1f1f1;
+}
+</style>
+</head>
+<body>
+
+<body style="font-size: 16px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; padding: 4rem 2rem;"><figure style="margin-bottom: 6rem"><h2 style="margin: 0">Document Analysis Results</h2>
+</body>
+
+<button class="collapsible">Entity Analysis</button>
+<div class="content">
+    <body>
+    <iframe id="analysis" seamless src="exportspacy.html" frameborder="0" scrolling="auto"></iframe>
+
+    </body>
+
+</div>
+
+<button class="collapsible">Sentence Dependency Analysis</button>
+<div class="content">
+    <body>
+    <iframe id="deps" seamless src="depexports.html" frameborder="0" scrolling="auto"></iframe>
+
+
+    </body>
+
+</div>
+
+<body>
+<iframe id="summary" seamless src="summaryhtml.html" frameborder="0" scrolling="auto"></iframe>
+</body>
+
+
+
+<script>
+var coll = document.getElementsByClassName("collapsible");
+var i;
+
+for (i = 0; i < coll.length; i++) {
+  coll[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var content = this.nextElementSibling;
+    if (content.style.display === "block") {
+      content.style.display = "none";
+    } else {
+      content.style.display = "block";
+    }
+  });
+}
+</script>
+
+
+
+
+
+</html>
